@@ -33,3 +33,4 @@ D:\workspace\VoiceChat\VoiceChat\obj\Debug\netcoreapp3.1\VoiceChat.csproj.CopyCo
 D:\workspace\VoiceChat\VoiceChat\bin\Debug\netcoreapp3.1\images\BG.png
 D:\workspace\VoiceChat\VoiceChat\bin\Debug\netcoreapp3.1\images\RecordLogo.png
 D:\workspace\VoiceChat\VoiceChat\obj\Debug\netcoreapp3.1\VoiceChat.csprojAssemblyReference.cache
+D:\workspace\VoiceChat\VoiceChat\bin\Debug\netcoreapp3.1\images\ProfilePicture.png

@@ -11,6 +11,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/bg.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/loginbg.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/logo.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/profilepicture.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/recordlogo.png")]
 
 

@@ -10,6 +10,7 @@
     <None Remove="images\BG.png" />
     <None Remove="images\LoginBG.png" />
     <None Remove="images\logo.ico" />
+    <None Remove="images\ProfilePicture.png" />
     <None Remove="images\RecordLogo.png" />
   </ItemGroup>
 
@@ -22,6 +23,9 @@
     </Content>
     <Content Include="images\logo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\ProfilePicture.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\RecordLogo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

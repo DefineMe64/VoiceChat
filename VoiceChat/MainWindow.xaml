@@ -25,7 +25,8 @@
             <ColumnDefinition Width="120"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Image Source="images/LoginBG.png" Stretch="UniformToFill" Grid.Column="0" Grid.ColumnSpan="3"></Image>
-        <TextBox Height="40" Width="180" FontSize="14" MaxLength="20" 
+        <TextBox x:Name="localUserName"
+                 Height="40" Width="180" FontSize="14" MaxLength="20" 
                  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                  TextBlock.LineHeight="22" TextBlock.LineStackingStrategy="BlockLineHeight"
                  Grid.Row="1" Grid.Column="1"
