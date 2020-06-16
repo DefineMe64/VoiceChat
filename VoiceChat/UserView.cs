@@ -14,8 +14,8 @@ namespace VoiceChat
 			if (PropertyChanged != null)
 				PropertyChanged(this, e);
 		}
-		private ObservableCollection<User> list = new ObservableCollection<User>();
-		public ObservableCollection<User> List
+		private IList<User> list = new ObservableCollection<User>();
+		public IList<User> List
 		{
 			get { return list; }
 			set
