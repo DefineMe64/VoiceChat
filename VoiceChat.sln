@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoiceChat", "VoiceChat\VoiceChat.csproj", "{497DF603-19AE-4872-A29C-3BD252ECD90B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VoiceChat", "VoiceChat\VoiceChat.csproj", "{497DF603-19AE-4872-A29C-3BD252ECD90B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chat-server", "chat-server\chat-server.csproj", "{5FA82B4B-AEBD-4CAA-91C8-5340AD0A5274}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{497DF603-19AE-4872-A29C-3BD252ECD90B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{497DF603-19AE-4872-A29C-3BD252ECD90B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{497DF603-19AE-4872-A29C-3BD252ECD90B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FA82B4B-AEBD-4CAA-91C8-5340AD0A5274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FA82B4B-AEBD-4CAA-91C8-5340AD0A5274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FA82B4B-AEBD-4CAA-91C8-5340AD0A5274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FA82B4B-AEBD-4CAA-91C8-5340AD0A5274}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

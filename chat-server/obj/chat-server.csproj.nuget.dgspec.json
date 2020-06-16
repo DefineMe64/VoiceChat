@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\workspace\\VoiceChat\\VoiceChat\\VoiceChat.csproj": {}
+    "D:\\workspace\\VoiceChat\\chat-server\\chat-server.csproj": {}
   },
   "projects": {
-    "D:\\workspace\\VoiceChat\\VoiceChat\\VoiceChat.csproj": {
+    "D:\\workspace\\VoiceChat\\chat-server\\chat-server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\workspace\\VoiceChat\\VoiceChat\\VoiceChat.csproj",
-        "projectName": "VoiceChat",
-        "projectPath": "D:\\workspace\\VoiceChat\\VoiceChat\\VoiceChat.csproj",
+        "projectUniqueName": "D:\\workspace\\VoiceChat\\chat-server\\chat-server.csproj",
+        "projectName": "chat-server",
+        "projectPath": "D:\\workspace\\VoiceChat\\chat-server\\chat-server.csproj",
         "packagesPath": "C:\\Users\\yescc\\.nuget\\packages\\",
-        "outputPath": "D:\\workspace\\VoiceChat\\VoiceChat\\obj\\",
+        "outputPath": "D:\\workspace\\VoiceChat\\chat-server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yescc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,24 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "dependencies": {
-            "MahApps.Metro": {
-              "target": "Package",
-              "version": "[2.0.1, )"
-            },
-            "MaterialDesignColors": {
-              "target": "Package",
-              "version": "[1.2.6, )"
-            },
-            "MaterialDesignThemes": {
-              "target": "Package",
-              "version": "[3.1.3, )"
-            },
-            "MaterialDesignThemes.MahApps": {
-              "target": "Package",
-              "version": "[0.1.4, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -66,11 +48,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WPF": {
-              "privateAssets": "none"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
