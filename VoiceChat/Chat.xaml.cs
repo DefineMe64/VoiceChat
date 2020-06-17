@@ -88,6 +88,7 @@ namespace VoiceChat
 			try
 			{
 				await connection.InvokeAsync("Quit", local.Addr,local.UserName);
+				
 			}
 			catch (Exception ex)
 			{
