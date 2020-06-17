@@ -13,7 +13,7 @@ namespace VoiceChat
 		{
 			ChatContent = chatContent;
 			ChatTime = chatTime;
-			IsOriginNative = IsOriginNative;
+			IsOriginNative = isOriginNative;
 		}
 	}
 }

@@ -28,7 +28,7 @@
                 <Image Width="270" Height="80" Source="images/BG.png" Stretch="UniformToFill"></Image>
             </StackPanel>
             <StackPanel x:Name="listStackPanel">
-                <ListBox x:Name="userList" ItemsSource="{Binding List}" SelectionChanged="SelectUser_Change">
+                <ListBox x:Name="userList" ItemsSource="{Binding List}" SelectionChanged="SelectUser_Change" >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource MaterialDesignDivider}"
@@ -112,7 +112,8 @@
             </StackPanel>
             <StackPanel Width="540" Height="80"
                         VerticalAlignment="Bottom">
-                <Button Style="{StaticResource MaterialDesignFlatButton}" Height="80"
+                <Button x:Name="recordBtn"
+                        Style="{StaticResource MaterialDesignFlatButton}" Height="80"
                         VerticalAlignment="Center" HorizontalAlignment="Center"
                         VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Record_Click">
                     <materialDesign:PackIcon Kind="Record"  Width="50" Height="50"></materialDesign:PackIcon>

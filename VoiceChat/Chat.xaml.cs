@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,6 +26,8 @@ namespace VoiceChat
 		private UserView userView;
 		private List<History> Historys;
 		private HubConnection connection;
+		private UdpClient udpClient;
+		private Task receiveTask;
 		public Chat(string localUserName,string localAddr)
 		{
 			InitializeComponent();
@@ -37,6 +40,8 @@ namespace VoiceChat
 			listStackPanel.DataContext = userView;
 			//消息历史集合
 			Historys = new List<History>();
+			//初始化UI
+			recordBtn.IsEnabled = false;
 			//创建服务器连接
 			connection = new HubConnectionBuilder()
 				.WithUrl("https://localhost:5001/listhub")
@@ -56,6 +61,27 @@ namespace VoiceChat
 			});
 			Start();
 			StartLogin();
+			//开放udp通讯8888端口
+			udpClient = new UdpClient(8888);
+			//开启监听任务
+			receiveTask = Task.Run(() =>
+			{
+				while (true)
+				{
+					Task<UdpReceiveResult> udpReceiveResult = udpClient.ReceiveAsync();
+					UdpReceiveResult result = udpReceiveResult.Result;
+					foreach (History history in Historys)
+					{
+						if (history.UserAddr == result.RemoteEndPoint.Address.ToString())
+						{
+							//history.ChatHistory.Add(new Message(Encoding.ASCII.GetString(result.Buffer), DateTime.Now, false));
+							Application.Current.Dispatcher.Invoke(new Action(() => {
+								history.ChatHistory.Add(new Message(Encoding.ASCII.GetString(result.Buffer), DateTime.Now, false));
+							}));
+						}
+					}
+				}
+			});
 		}
 		private void OutputError(string message)
 		{
@@ -110,7 +136,18 @@ namespace VoiceChat
 		}
 		private void Record_Click(object sender, RoutedEventArgs e)
 		{
-			
+			string selectAddr = ((User)userList.SelectedItem).Addr;
+			string selectName = ((User)userList.SelectedItem).UserName;
+			string sendString = "hello," + selectName;
+			byte[] sendByte = Encoding.ASCII.GetBytes(sendString);
+			udpClient.SendAsync(sendByte,sendByte.Length ,selectAddr,8888);
+			foreach(History history in Historys)
+			{
+				if (history.UserName == selectName && history.UserAddr == selectAddr)
+				{
+					history.ChatHistory.Add(new Message(sendString, DateTime.Now, true));
+				}
+			}
 		}
 		//Test
 		private void AddTest_Click(object sender, RoutedEventArgs e)
@@ -119,9 +156,25 @@ namespace VoiceChat
 		}
 		private void SelectUser_Change(object sender, RoutedEventArgs e)
 		{
-			foreach(History temp in Historys)
+			recordBtn.IsEnabled = true;
+			string selectAddr = ((User)userList.SelectedItem).Addr;
+			string selectName = ((User)userList.SelectedItem).UserName;
+			bool flag = false;
+			foreach (History history in Historys)
 			{
-				if (temp.UserAddr == ((User)userList.SelectedItem).Addr)
+				if (history.UserName == selectName && history.UserAddr == selectAddr)
+				{
+					flag = true;
+					break;
+				}
+			}
+			if (!flag)
+			{
+				Historys.Add(new History(local.UserName, local.Addr, selectName, selectAddr));
+			}
+			foreach (History temp in Historys)
+			{
+				if (temp.UserAddr == selectAddr)
 					messageStackPanel.DataContext = temp;
 			}
 		}

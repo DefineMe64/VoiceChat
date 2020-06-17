@@ -28,7 +28,7 @@ namespace chat_server.Hubs
 				if (list[i].Addr == addr && list[i].UserName == name)
 					list.Remove(list[i]);
 			}
-			await Clients.All.SendAsync("Update", JsonConvert.SerializeObject(list));
+			await Clients.AllExcept(Context.ConnectionId).SendAsync("Update", JsonConvert.SerializeObject(list));
 		}
 	}
 }

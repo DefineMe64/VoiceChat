@@ -53,4 +53,3 @@ D:\workspace\VoiceChat\VoiceChat\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
 D:\workspace\VoiceChat\VoiceChat\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
 D:\workspace\VoiceChat\VoiceChat\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\workspace\VoiceChat\VoiceChat\obj\Debug\netcoreapp3.1\VoiceChat.csproj.CoreCompileInputs.cache
-D:\workspace\VoiceChat\VoiceChat\obj\Debug\netcoreapp3.1\VoiceChat.csprojAssemblyReference.cache
