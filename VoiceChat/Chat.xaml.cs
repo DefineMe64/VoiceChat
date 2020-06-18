@@ -98,7 +98,10 @@ namespace VoiceChat
 				for (int i = Historys.Count - 1; i >= 0; i--)
 				{
 					if (Historys[i].UserAddr == deleteUser.Addr && Historys[i].UserName == deleteUser.UserName)
+					{
+						Historys[i].ChatHistory.Clear();
 						Historys.Remove(Historys[i]);
+					}
 				}
 			});
 			//建立连接
@@ -264,7 +267,7 @@ namespace VoiceChat
 						{
 							//如果有子文件删除文件
 							File.Delete(f);
-							MessageBox.Show(f);
+							//MessageBox.Show(f);
 						}
 						else
 						{
@@ -274,7 +277,7 @@ namespace VoiceChat
 					}
 					//删除空文件夹
 					Directory.Delete(file);
-					MessageBox.Show(file);
+					//MessageBox.Show(file);
 				}
 			}
 			catch (Exception ex) // 异常处理

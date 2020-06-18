@@ -73,10 +73,12 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Height="10"></StackPanel>
-            <StackPanel x:Name="messageStackPanel" Height="450">
-                <ItemsControl Grid.Row="0" ItemsSource="{Binding Path=ChatHistory}" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="messageStackPanel" Height="450" >
+                <!--Grid.Row="0"-->
+                <ItemsControl  ItemsSource="{Binding Path=ChatHistory}" Height="450" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                     <ItemsControl.Template>
-                        <ControlTemplate TargetType="ItemsControl">
+                        <!--TargetType="ItemsControl"-->
+                        <ControlTemplate>
                             <ScrollViewer>
                                 <ItemsPresenter/>
                             </ScrollViewer>
