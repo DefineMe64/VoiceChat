@@ -19,3 +19,4 @@ D:\workspace\VoiceChat\chat-server\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\workspace\VoiceChat\chat-server\obj\Debug\netcoreapp3.1\chat-server.csproj.CoreCompileInputs.cache
 D:\workspace\VoiceChat\chat-server\obj\Debug\netcoreapp3.1\chat-server.MvcApplicationPartsAssemblyInfo.cache
 D:\workspace\VoiceChat\chat-server\obj\Debug\netcoreapp3.1\chat-server.csproj.CopyComplete
+D:\workspace\VoiceChat\chat-server\obj\Debug\netcoreapp3.1\chat-server.csprojAssemblyReference.cache

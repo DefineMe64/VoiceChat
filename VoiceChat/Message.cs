@@ -6,12 +6,12 @@ namespace VoiceChat
 {
 	class Message
 	{
-		public string ChatContent { get; set; }
+		public string ChatPath { get; set; }
 		public DateTime ChatTime { get; set; }
 		public bool IsOriginNative { get; set; }
-		public Message(string chatContent, DateTime chatTime, bool isOriginNative)
+		public Message(string chatPath, DateTime chatTime, bool isOriginNative)
 		{
-			ChatContent = chatContent;
+			ChatPath = chatPath;
 			ChatTime = chatTime;
 			IsOriginNative = isOriginNative;
 		}

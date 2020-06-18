@@ -12,23 +12,24 @@ namespace chat_server.Hubs
 	public class ListHub:Hub
 	{
 		public static IList<User> list = new ObservableCollection<User>();
-		public async Task Login(string addr,string name)
+		public async Task Login(string userJson)
 		{
-			Console.WriteLine($"{addr} connected");
-			list.Add(new User());
-			list[list.Count - 1].Addr = addr;
-			list[list.Count - 1].UserName = name;
-			await Clients.All.SendAsync("Update",JsonConvert.SerializeObject(list));
+			User newUser = JsonConvert.DeserializeObject<User>(userJson);
+			Console.WriteLine($"{newUser.Addr} connected");
+			list.Add(newUser);
+			await Clients.AllExcept(Context.ConnectionId).SendAsync("AddUser", userJson);
+			await Clients.Client(Context.ConnectionId).SendAsync("UpdateList", JsonConvert.SerializeObject(list));
 		}
-		public async Task Quit(string addr, string name)
+		public async Task Quit(string userJson)
 		{
-			Console.WriteLine($"{addr} disconnected");
+			User deleteUser = JsonConvert.DeserializeObject<User>(userJson);
+			Console.WriteLine($"{deleteUser.Addr} disconnected");
 			for(int i = list.Count - 1; i >= 0; i--)
 			{
-				if (list[i].Addr == addr && list[i].UserName == name)
+				if (list[i].Addr == deleteUser.Addr && list[i].UserName == deleteUser.UserName)
 					list.Remove(list[i]);
 			}
-			await Clients.AllExcept(Context.ConnectionId).SendAsync("Update", JsonConvert.SerializeObject(list));
+			await Clients.AllExcept(Context.ConnectionId).SendAsync("DeleteUser", userJson);
 		}
 	}
 }
