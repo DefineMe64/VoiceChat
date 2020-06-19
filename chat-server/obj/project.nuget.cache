@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "UZy5cU7dpiY3fhqsGczHiGeljkCDFpIlSj+dhG0boca4e5kr2+H/liJ3gRPO1OFno/+fSZVuMb1xFoPYJ4uiuw==",
+  "success": true,
+  "projectFilePath": "D:\\workspace\\VoiceChat\\chat-server\\chat-server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\yescc\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
